@@ -1,0 +1,115 @@
+/* headings */
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@500&family=Rubik:wght@300;400;500;600;700;800&display=swap");
+
+/* font-family: 'Rubik', sans-serif; */
+
+/* for paragrahs, button,... */
+@import url("https://fonts.googleapis.com/css2?family=Andada+Pro:wght@400;500;600;700;800&family=Roboto+Slab:wght@500&family=Rubik:wght@300;400;500;600;700;800&display=swap");
+
+/* font-family: 'Andada Pro', serif; */
+
+@import url("https://fonts.googleapis.com/css2?family=Andada+Pro:wght@400;500;600;700;800&family=Roboto+Slab:wght@500&family=Rubik:wght@300;400;500;600;700;800&family=Source+Serif+Pro:wght@200;300;400;600;700&display=swap");
+
+/* font-family: 'Source Serif Pro', serif; */
+
+:root {
+  --clr-base: #333;
+  --clr-link-blue: #27b9c2;
+  --clr-link-yellow: #ffc80a;
+
+  --clr-ntrl-dk: #222;
+  --clr-ntrl-dkr: #000;
+  --clr-ntrl-lt: #9fa3a7;
+  --clr-ntrl-ltr: #fff;
+
+  --bg-clr-grey: #f7f8f9;
+  --bg-clr-yel: #ffc80a;
+  --bg-clr-twt-lt: #38d5f4;
+  --bg-clr-twt-dk: #35cfed;
+  --bg-clr-disk-lt: #8576bc;
+  --bg-clr-disk-dk: #8166b0;
+}
+
+body {
+  font-family: "Andada Pro", serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* body sytling */
+
+/* utility classes */
+.upcase {
+  text-transform: uppercase;
+}
+
+.downcase {
+  text-transform: lowercase;
+}
+
+.capitalize {
+  text-transform: capitalize;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  display: block;
+  width: 100%;
+  max-width: 250px;
+  margin: 0 auto;
+}
+
+.mt-3 {
+  margin-top: 3rem;
+}
+
+.text-center {
+  text-align: center;
+}
+
+section {
+  margin: 0 auto;
+}
+
+/* end of utility classes */
+
+/* main header styling */
+.main-header {
+  padding: 3rem 0 3.5rem 0;
+  background-color: var(--bg-clr-grey);
+}
+.main-header__subtitle {
+  color: var(--clr-ntrl-lt);
+  font-weight: bolder;
+  letter-spacing: 0.1rem;
+  font-family: "Rubik", sans-serif;
+  font-size: 0.8rem;
+  margin-bottom: 2rem;
+}
+.main-header__title {
+  font-size: 3rem;
+  font-weight: 500;
+}
+.main-header__link-wrapper {
+  margin-top: 1.6rem;
+}
+.main-header__link {
+  color: var(--clr-link-blue);
+}
+
+/* end of header styles */
+
+/* content area styling */
+
+/* end of content area styling */
+
+/* media queries */
+@media screen and (min-width: 480px) {
+}
