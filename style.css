@@ -267,11 +267,11 @@ img {
 
 /* best choice styling */
 .best-choice-wrapper {
-  position: relative;
-  background-color: var(--bg-clr-blue-grey);
   display: grid;
   grid-template-rows: auto auto auto;
   row-gap: 1.5rem;
+  position: relative;
+  background-color: var(--bg-clr-blue-grey);
   background-image: url("https://uploads-ssl.webflow.com/5bc242f45a5ed923b1704210/5bc2f42d5a5ed97dab707e7e_UX.png");
   background-position: 50% 100%;
   background-size: 80%;
@@ -410,6 +410,7 @@ img {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-areas:
+      "header header"
       "iphone6s iphone6s"
       "keyboard gamepad"
       "imac imac"
@@ -419,6 +420,9 @@ img {
       "old-tv old-tv";
   }
 
+  .main-header {
+    grid-area: header;
+  }
   .main-header__title {
     font-size: 2.3rem;
   }
@@ -429,7 +433,6 @@ img {
     justify-content: center;
   }
   .iphone6s__article {
-    /* justify-self: end; */
     width: 32%;
     display: flex;
     flex-direction: column;
@@ -441,9 +444,15 @@ img {
   }
   .keyboard-wrapper {
     grid-area: keyboard;
+    width: 100%;
   }
+  .keyboard__title {
+    width: 100%;
+  }
+
   .gamepad-wrapper {
     grid-area: gamepad;
+    width: 100%;
   }
   .gamepad__title {
     width: 60%;
@@ -455,7 +464,7 @@ img {
     flex-direction: row;
     align-items: flex-start;
     justify-content: space-around;
-    height: min-content !important;
+    height: min-content;
   }
   .imac__article {
     width: 200%;
@@ -480,6 +489,7 @@ img {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    width: 100%;
   }
   .best-choice__button {
     align-self: flex-start;
@@ -488,7 +498,9 @@ img {
     width: 100%;
   }
   .best-choice__img {
-    margin: 0;
+    margin: 0 auto;
+    /* transform: translateX(-13%); */
+    width: 90%;
   }
 
   .icloud-wrapper {
@@ -509,7 +521,6 @@ img {
     transform: translateX(-0.5rem);
     margin: 1rem 0;
     position: relative;
-    /* margin-bottom: 1.5rem; */
   }
   .icloud__img {
     margin: 0;
@@ -533,18 +544,168 @@ img {
     text-align: center;
   }
 
-
   .tv-img-wrapper {
     grid-area: old-tv;
     width: 100%;
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-between;
+    padding-inline: 4rem;
+  }
+  .tv__img {
+    margin: 0;
   }
   .tv__par {
     margin: 0;
     margin-right: 1.1rem;
+    margin-top: 1.5rem;
     text-align: left;
+    min-width: 40%;
+    max-width: 45%;
+  }
+}
+
+/* media query for  */
+@media screen and (min-width: 992px) {
+  .content-area {
+    min-width: 100%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-areas:
+      "iphone6s iphone6s header header"
+      "keyboard imac imac icloud"
+      "gamepad best-choice best-choice icloud"
+      "twt better-exp tv tv";
+    margin: 0;
+    padding: 0;
+    gap: 0;
+  }
+
+
+  .main-header {
+    grid-area: header;
+    width: 100%;
+  }
+  .main-header__subtitle {
+    font-size: 0.85rem;
+    margin-top: 1.4rem;
+    padding-bottom: 0.4rem;
+  }
+  .main-header__title {
+    font-size: 3.2rem;
+    max-width: 30rem;
+    text-align: center;
+    margin-inline: auto;
+    margin-top: -1rem;
+  }
+
+
+  .iphone6s-wrapper {
+    grid-area: iphone6s;
+    width: 100%;
+    justify-content: space-between;
+    padding-inline: 2.3rem;
+    padding-top: 0.8rem;
+  }
+  .iphone6s__article {
+    min-width: 10rem;
+    /* align-self: flex-start; */
+    justify-content: flex-start;
+    min-height: 100%;
+    padding-top: 0.9rem;
+  }
+  .iphone6s__title,
+  .iphone6s__subtitle {
+    margin-bottom: 1.6rem;
+  }
+  .iphone6s__paragraph {
+    line-height: 1.5;
+  }
+  .phone__img {
+    margin: 0;
+  }
+
+
+  .keyboard-wrapper {
+    grid-area: keyboard;
+    justify-content: f lex-start;
+    width: 100%;
+  }
+
+
+  .imac-wrapper {
+    grid-area: imac;
+    align-items: flex-end;
+    min-height: 100%;
+    max-height: 23rem;
+    padding-inline: 3rem;
+    margin: 0;
+  }
+  .imac__article {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    /* height: 100%; */
+  }
+  .imac__title {
+    width: 90%;
+  }
+  .apple-exp-wrapper {
+    align-self: center;
+    padding: 0;
+  }
+  .imac__img {
+    z-index: -1;
+    /* max-width: none; */
+    max-height: 100%;
+    position: relative;
+    left: -2rem;
+  }
+
+
+  .icloud-wrapper {
+    grid-area: icloud;
+  }
+
+
+  .gamepad-wrapper {
+    grid-area: gamepad;
+  }
+
+
+  .best-choice-wrapper {
+    grid-area: best-choice;
+  }
+  .best-choice__button {
+    font-weight: 700;
+    margin-left: 2rem;
+  }
+  .best-choice__title {
+    width: 50%;
+  }
+  .best-choice__img {
+    /* width: 200%; */
+    min-width: 90%;
+  }
+
+  .connect-twitter-wrapper {
+    grid-area: twt;
+  }
+
+
+  .better-exp-wrapper {
+    grid-area: better-exp;
+  }
+  .better-exp__title {
+    min-width: 40% !important;
+  }
+
+
+  .tv-img-wrapper {
+    grid-area: tv;
+  }
+  .tv__par {
+    width: 40%
   }
 }
